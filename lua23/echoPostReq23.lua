@@ -1,7 +1,7 @@
 local cjson = require "cjson"
 local get, post, files = require "resty.reqargs"()
 ngx.status  = ngx.HTTP_OK
-print("this is post request ===> ", post)
+ngx.log(ngx.NOTICE, "Hello2333333333")
 ngx.say(cjson.encode(post))
 return ngx.exit(ngx.HTTP_OK)
 
