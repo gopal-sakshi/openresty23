@@ -12,8 +12,10 @@ end
 gop_utils23.hex_uuid12 = hex_uuid12
 
 local function readfile23(file_path, opt)
+    print("filepath ==========> ", file_path)
     local file = io.open(file_path, "r")
     if(file ~= nil) then
+        print("nil path encountered")
         local file_content = file:read("*all")
         io.close(file)
         return file_content
