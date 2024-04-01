@@ -1,0 +1,67 @@
+nginx configuration block
+- it is a very bad example of using "configuration as code"
+
+    location ~ ^/mobile/(web/app.htm) {
+        set $type $1;
+        set $orig_args $args;
+        if ( $http_user_Agent ~ "(iPhone|iPad|Android)" ) {
+            rewrite  ^/mobile/(.*) http://touch.foo.com/mobile/$1 last;
+        }
+        proxy_pass http://foo.com/$type?$orig_args;
+    }
+
+https://api7.ai/learning-center/openresty/knowledge-of-nginx-used-in-openresty
+
+- master worker mode
+- OpenResty adds unique privileged agent to nginx master-worker model
+- nginx has 11 execution phases 
+    {
+        NGX_HTTP_POST_READ_PHASE = 0
+        server rewrite
+        find config
+        ...........
+        .......
+        NGX_HTTP_LOG_PHASE
+    }
+- llly OpenResty has 11 directives ( *_by_lua ) related to NGINX phase
+
+    initialization phase        init_by_lua, init_worker_by_lua
+    rewrite/access phase        ssl_certificate, set, rewrite, access 
+    content phase               balancer, content, header_filter, body_filter
+    log phase                   log_by_lua
+
+=========================================================================
+
+init_by_lua
+- only when the master process is created
+- preload all Lua modules
+
+init_by_worker_lua
+- only when each worker process is created
+
+others
+- triggered by client requests
+
+
+set_by_lua:         setting variables.
+rewrite_by_lua:     forwarding, redirection, etc.
+access_by_lua:      access, permissions, etc.
+content_by_lua:     generating return content.
+header_filter_by_lua:   response header filtering processing.
+body_filter_by_lua:     response body filtering processing.
+log_by_lua:             logging.
+
+
+convert Plain text API ----> encryption/decryption
+
+location /mixed {
+    access_by_lua '...';                // add decrypt logic here
+    content_by_lua '...';               // untouched
+    body_filter_by_lua '...';           // add encrypt logic here
+}
+
+===============================================
+
+OpenResty's API > LuaJIT's library functions > standard Lua's functions
+
+===============================================

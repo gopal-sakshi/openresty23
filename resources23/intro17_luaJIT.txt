@@ -1,0 +1,26 @@
+LuaJIT
+- different to Lua
+
+======================================================================
+Lua code 
+    not interpreted directly... but compiled into ByteCode by Lua compiler
+    then this ByteCode is executed by Lua virtual machine
+
+Lua compiler
+Lua virtual machine
+ByteCode
+======================================================================
+
+LuaJIT runtime contains these entities
+- assembly implementation of Lua interpreter
+- JIT compiler (which can generate machine code directly)
+- STEPS
+    1st step        Lua code --- compiled into ---> byte code       (same as standard Lua)
+    2nd step        JIT compiler  --- compile the hot function ---> machine code for target architecture
+
+- summary = make as much Lua code available as possible for machine code generation by JIT compiler      
+======================================================================
+
+in Lua, variables are global by default and are placed in a table named _G
+
+======================================================================

@@ -1,0 +1,17 @@
+resty -e "ngx.say('hello world23')"
+resty -e "ngx.say('hello world'); ngx.sleep(10)" &              // HOW & at the end makes a difference ??
+resty -e "ngx.say('hello world'); ngx.sleep(10)"
+
+--------------------------------------------------------------
+we used resty command                   (to run simple commands)
+- without master process
+- without listening on specific ports
+
+
+we use openresty command        (more formal way)
+- openresty -p `pwd`/config23 -c conf/nginx.conf 
+--------------------------------------------------------------
+
+which resty
+which openresty
+--------------------------------------------------------------

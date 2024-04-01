@@ -11,3 +11,7 @@
 2024/03/31 09:55:33 [emerg] 8057#8057: open() "/home/gopalakrishnas/Desktop/repos23/others23/openresty23/config23/config23/conf/nginx.conf" failed (2: No such file or directory)
 2024/03/31 09:55:49 [emerg] 8122#8122: open() "/home/gopalakrishnas/Desktop/repos23/others23/openresty23/config23/config23/logs/error.log" failed (2: No such file or directory)
 2024/03/31 10:00:20 [notice] 8459#8459: signal process started
+2024/03/31 13:22:20 [notice] 6454#6454: signal process started
+2024/03/31 13:22:35 [error] 6456#6456: *2 failed to load external Lua file "/home/gopalakrishnas/Desktop/repos23/others23/openresty23/config23/lua23/hello_world.lua": cannot open /home/gopalakrishnas/Desktop/repos23/others23/openresty23/config23/lua23/hello_world.lua: No such file or directory, client: 127.0.0.1, server: , request: "GET /file23 HTTP/1.1", host: "localhost:8080"
+2024/03/31 13:22:44 [error] 6456#6456: *2 failed to load external Lua file "/home/gopalakrishnas/Desktop/repos23/others23/openresty23/config23/lua23/hello_world.lua": cannot open /home/gopalakrishnas/Desktop/repos23/others23/openresty23/config23/lua23/hello_world.lua: No such file or directory, client: 127.0.0.1, server: , request: "GET /file23 HTTP/1.1", host: "localhost:8080"
+2024/03/31 13:24:43 [notice] 6675#6675: signal process started

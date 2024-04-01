@@ -1,0 +1,30 @@
+https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/
+https://aosabook.org/en/v2/nginx.html
+
+nginx ARCHITECTURE
+
+- asynchronous, event-driven approach
+- instead of creating dedicated process/thread for each request
+- it handles multiple connections & requests in one worker process
+
+nginx.conf, in events directive ===> 
+    worker_connections  1024
+- 
+
+master process
+- reading configuration, binding to ports
+- handles child processes
+    cache loader ====> load disk-based cache into memory & exits
+    cache manager ===> periodically runs & prunes entries from disk cache to keep within configured sizes
+    worker process ==> handle network connections, r/w to disk, communicate with upstream
+===============================================================================
+some possible conf
+
+worker_processes number  auto;          ## auto will default to number of CPUs (mine is 6 core CPU)
+worker_connections 2048;
+
+
+If you have 2 worker_processes and 1 CPU, then the kernel will have to keep switching between the 2 processes. 
+This context switching adds some overhead that you don't need.
+
+===============================================================================
