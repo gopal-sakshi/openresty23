@@ -26,8 +26,8 @@ cd config23
 /usr/local/openresty/nginx/sbin/nginx -p `pwd`/config23 -c conf/nginx.conf
 
 
-(OR)
-openresty -p `pwd`/config23 -c conf/nginx.conf 
+(OR)    <!-- USE THISSSSSSSSSSSS -->
+<openresty -p `pwd`/config23 -c conf/nginx.conf>
 
 REFER THIS ============> https://nginx.org/en/docs/switches.html
 

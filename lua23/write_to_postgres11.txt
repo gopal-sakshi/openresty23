@@ -1,0 +1,16 @@
+sudo opm get leafo/pgmoon
+luarocks install pgmoon
+- RESPONSE =====> Package leafo/pgmoon 1.16.0 installed successfully under /usr/local/openresty/site/ .
+
+ERROR = Either luaossl or resty.openssl is required to derive pbkdf2 key
+sudo opm get xiaocang/lua-resty-openssl
+
+==========================================================
+
+https://github.com/leafo/pgmoon
+https://github.com/leafo/pgmoon
+- see dependencies section in readme
+
+Password authentication may require a crypto library, luaossl.
+luarocks install luaossl
+==========================================================

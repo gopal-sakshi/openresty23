@@ -1,0 +1,7 @@
+{
+    "Lua.workspace.library": [
+        "/usr/local/openresty/lualib/idi_not_needed, but urike uncha",
+        "/usr/local/openresty/idi_not_needed, but urike uncha",
+        "${3rd}/OpenResty/library"
+    ]
+}
