@@ -1,6 +1,6 @@
 local cjson = require "cjson"
 ngx.status  = ngx.HTTP_OK
-ngx.say(cjson.encode({ 
+ngx.say(cjson.encode({
     clubName = "RealMadrid",
     isUclWinner = true,
     uclTitle = 14,

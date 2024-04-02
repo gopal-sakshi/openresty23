@@ -1,0 +1,6 @@
+401     =   Unauthenticated + Supported method
+405     =   Authenticated + Authorized + Unsupported method
+403     =   Authenticated + Unauthorized + Supported method
+
+--------------------------------------------------------
+

@@ -27,8 +27,9 @@ cd config23
 
 
 (OR)    <!-- USE THISSSSSSSSSSSS -->
-<openresty -p `pwd`/config23 -c conf/nginx.conf>
-
+openresty -p `pwd`/config23 -c conf/nginx.conf                  <!-- to start -->
+openresty -p `pwd`/config23 -c conf/nginx.conf -s reload        <!-- to reload -->
+openresty -p `pwd`/config23 -c conf/nginx.conf -t               <!-- to test -->
 REFER THIS ============> https://nginx.org/en/docs/switches.html
 
 
