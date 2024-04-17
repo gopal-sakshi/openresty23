@@ -1,4 +1,3 @@
-local req_body          = ngx.req.get_body_data()
 local http              = require "resty.http"     --- sudo opm get ledgetech/lua-resty-http
 local cjson             = require "cjson"
 
@@ -17,6 +16,8 @@ if ngx.req.get_method() ~= 'GET' then
     ngx.req.read_body()         --- first we have to read_body(); only then get_body_data() WORKS
     body23["dataContent"] = ngx.req.get_body_data()
     ngx.log(ngx.NOTICE, "rcvd body ---------> ", body23.__tostring)
+elseif ngx.req.get_method() == 'GET' then
+    body23["dataContent"] = '{"name": "RMA", "stadium": "Bernabeu" }'
 end
 
 ------------------------------------------------------------

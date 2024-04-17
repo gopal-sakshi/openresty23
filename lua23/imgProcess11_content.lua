@@ -1,1 +1,1 @@
-ngx.say("undavayyaa")
+print("undavayyaa ===> ", ngx.var.club23, " __ decoded player = ", ngx.decode_base64(ngx.var.player23))

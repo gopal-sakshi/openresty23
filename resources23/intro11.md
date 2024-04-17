@@ -33,7 +33,7 @@ openresty -p `pwd`/config23 -c conf/nginx.conf -t               <!-- to test -->
 REFER THIS ============> https://nginx.org/en/docs/switches.html
 
 
-
+openresty -p `pwd`/config23 -c conf/nginx.conf -V       <!-- to know about nginx paths -->
 =========================================================================
 shutdown (OR) graceful shutdown (OR) restart
 
