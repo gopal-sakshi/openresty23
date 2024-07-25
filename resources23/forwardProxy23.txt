@@ -1,0 +1,37 @@
+4 components
+
+Client                      testing_backend/../forward-proxy23.js
+forward proxy               openresty23/../z_forward23.conf server listening on 14590 port
+Internet            
+Resource server             our simpleExpress webserver
+
+============================================================
+
+forward proxy sits infront of clients
+from client - it accepts request and forwads it to backend web server
+receives the response from webserver & sends it back to client
+
+control_flow
+
+    testing_backend
+    openresty23
+    proxy_pass to simpleExpress
+    response sent back to openresty23
+    openresty23 sends the same response back to testing_backend
+
+MEANING: 
+    simpleExpress web server never knows where the request comes from
+    the request can come from testing_backend (or) testingV16 (or) anywhere
+    all simpleExpress knows is openresty23 as the origin
+
+Forward proxy is something the client sets up in order to connect to rest of the internet
+============================================================
+
+Why forward proxy
+- Masking the IP & location to gain access to location-restricted services
+- For isolated internal networks that need to connect to specific resources on the internet
+- For caching requests to specific servers for content that rarely changes in order to save resources
+
+proxies do not encrypt traffic, 
+whereas VPNs redirect the traffic through secure & encrypted tunnels.
+============================================================

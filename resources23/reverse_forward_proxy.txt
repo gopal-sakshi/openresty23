@@ -1,0 +1,16 @@
+Nginx is often used as
+- load balancer
+- a reverse proxy
+- an HTTP Cache
+
+==========================================================================
+
+Forward Proxy servers
+- entities that act as middlemen between a client and the host of the requested resource. 
+- This means the traffic goes through an additional machine in order to get to the destination (host server). 
+- The proxy continues the request on behalf of the client
+    so when the host server accepts the request, they only see the IP of the proxy. 
+- In comparison, a reverse proxy sits directly in front of the web
+    and routes the request coming from the client to the correct web server (inside a network of multiple servers).
+
+==========================================================================
